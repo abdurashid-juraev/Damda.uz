@@ -1,0 +1,137 @@
+.hotel-form {
+  background-color: #ededed;
+  padding: 20px 15px;
+  label {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  padding: 0;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: #fff;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: DodgerBlue transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent DodgerBlue transparent;
+  top: 7px;
+}
+
+.select-items div,
+.select-selected {
+  color: #4a4a4a;
+  padding: 6px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #fff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.selected-option {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.select-wrap {
+  margin-bottom: 20px;
+}
+.hotel-date-select {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 20px;
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+}
+.hotel-select-family {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  .custom-select {
+    border: 0;
+    width: 110px;
+  }
+}
+
+.hotel-price-range {
+  color: #4a4a4a;
+  background: transparent;
+  font-weight: 600;
+  border: 0;
+  margin-bottom: 10px;
+}
+.form-check {
+  label {
+    font-size: 15px;
+    font-weight: normal;
+  }
+}
+.form-check-input {
+  width: 18px;
+  height: 18px;
+}
+.form-check-label {
+  margin-left: 8px;
+}
+.hotel-comfort {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 75px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid dodgerblue;
+  }
+}
+.hotel-comfort-content {
+  display: none;
+}
+.ui-slider-handle,
+.ui-state-default {
+  background: dodgerblue !important;
+  border-radius: 50%;
+  &:active {
+    outline: none;
+    border-radius: 50%;
+  }
+  &:focus {
+    outline: none;
+    border-radius: 50%;
+  }
+}

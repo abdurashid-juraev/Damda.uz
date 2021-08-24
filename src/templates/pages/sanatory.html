@@ -1,0 +1,730 @@
+{% set title = "sanatory" %}
+
+{% extends "main.tpl" %}
+
+{% block content %}
+
+{% include "components/header.html" %}
+<main class="hotel-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="hotel-search-wrap">
+          <form>
+            <input class="hotel-search" type="text" placeholder="Поиск">
+            <button class="hotel-search-btn">
+              <img src="../../images/svg/search-icon.svg" alt="">
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div>
+          <form class="hotel-form" action="">
+            <div class="select-wrap">
+              <label for="country">Страна</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Узбекистан</option>
+                  <option value="1">Кыргызстан</option>
+                  <option value="2">Азербайджан</option>
+                  <option value="3">Армения</option>
+                  <option value="4">Грузия</option>
+                  <option value="5">Таджикистан</option>
+                  <option value="6">Армения</option>
+                  <option value="7">Азербайджан</option>
+                  <option value="8">Кыргызстан</option>
+                  <option value="9">Узбекистан</option>
+                  <option value="10">Грузия</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Регион</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Выберите регион</option>
+                  <option value="1">Бухара</option>
+                  <option value="2"> Джизак</option>
+                  <option value="3">Кашкадаря</option>
+                  <option value="4">Ташкентская область</option>
+                  <option value="5">Ташкент</option>
+                  <option value="6">Фергана</option>
+                  <option value="6">Андижан</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Район</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Выберите район</option>
+                  <option value="1">Бухара</option>
+                  <option value="2"> Джизак</option>
+                  <option value="3">Кашкадаря</option>
+                  <option value="4">Ташкентская область</option>
+                  <option value="5">Ташкент</option>
+                  <option value="6">Фергана</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="party">Заезд</label>
+              <input class="hotel-date-select" id="party" value="Выезд: " type="datetime-local" name="partydate">
+            </div>
+            <div class="select-wrap">
+              <label for="party">Выезд</label>
+              <input class="hotel-date-select" id="party" value="Выезд: " type="datetime-local" name="partydate">
+            </div>
+            <div class="hotel-select-family">
+              <div>
+                <label for="country">Взрослых</label>
+                <div class="custom-select">
+                  <select>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="country">Дети</label>
+                <div class="custom-select">
+                  <select>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Номеров</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Сортировка</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">По популярности</option>
+                  <option value="1">Сначала дешевые</option>
+                  <option value="2">Сначала дорогие</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap m-b-40">
+              <p>
+                <label for="amount">Диапозон цен</label>
+                <input class="hotel-price-range" type="text" id="amount" readonly>
+              </p>
+              <div class="range-sl" id="slider-range"></div>
+            </div>
+            <div class="select-wrap">
+              <div>
+                <div class="m-b-10 hotel-comfort"> Удобства</div>
+                <div class="hotel-comfort-content">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Парковка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Wi-Fi
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Круглосуточная стойка регистрации
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Завтрак
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Обед/ужин
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Семейные номера
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Глажка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Фитнес-центр
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Прачечная
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Бассейн
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Ресторан
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <div class="m-b-35"><a class="hotel-link" href="#!">Санатории</a></div>
+          <div class="hotel-title m-b-25">Санатории Узбекистана. Фотографии, цены, отзывы и бронирование онлайн</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div>
+              <a href="./sanatory-single.html" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="hotel-card-content">
+                  <div class="m-b-15">Grand Canyon</div>
+                  <div class="hotel-address">Узбекистан, Ташкент, Яккасарайский район</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="hotel-map-link"> <span><img src="../../images/svg/map-location.svg" alt=""></span>
+                      <span>На карте</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="hotel-price-info">
+                      <div> Цена:</div>
+                      <div>от 50 000 сўм в сутки</div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="hotel-card-content">
+                  <div class="m-b-15">Atlet</div>
+                  <div class="hotel-address">Узбекистан, Ташкентская область, город Чиpчик</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="hotel-map-link"> <span><img src="../../images/svg/map-location.svg" alt=""></span>
+                      <span>На карте</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="hotel-price-info">
+                      <div> Цена:</div>
+                      <div>от 1500 000 сўм в сутки</div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="hotel-card-content">
+                  <div class="m-b-15">Atlet</div>
+                  <div class="hotel-address">Узбекистан, Ташкентская область, город Чиpчик</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="hotel-map-link"> <span><img src="../../images/svg/map-location.svg" alt=""></span>
+                      <span>На карте</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="hotel-price-info">
+                      <div> Цена:</div>
+                      <div>от 1500 000 сўм в сутки</div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="hotel-card-content">
+                  <div class="m-b-15">Atlet</div>
+                  <div class="hotel-address">Узбекистан, Ташкентская область, город Чиpчик</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="hotel-map-link"> <span><img src="../../images/svg/map-location.svg" alt=""></span>
+                      <span>На карте</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="hotel-price-info">
+                      <div> Цена:</div>
+                      <div>от 1500 000 сўм в сутки</div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="hotel-card-content">
+                  <div class="m-b-15">Atlet</div>
+                  <div class="hotel-address">Узбекистан, Ташкентская область, город Чиpчик</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="hotel-map-link"> <span><img src="../../images/svg/map-location.svg" alt=""></span>
+                      <span>На карте</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="hotel-price-info">
+                      <div> Цена:</div>
+                      <div>от 1500 000 сўм в сутки</div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="hotel-card-content">
+                  <div class="m-b-15">Atlet</div>
+                  <div class="hotel-address">Узбекистан, Ташкентская область, город Чиpчик</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="hotel-map-link"> <span><img src="../../images/svg/map-location.svg" alt=""></span>
+                      <span>На карте</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="hotel-price-info">
+                      <div> Цена:</div>
+                      <div>от 1500 000 сўм в сутки</div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+{% include "components/footer.html" %}
+{% endblock %}

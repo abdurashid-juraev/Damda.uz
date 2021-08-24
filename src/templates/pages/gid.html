@@ -1,0 +1,513 @@
+  {% set title = "gid" %}
+
+{% extends "main.tpl" %}
+
+{% block content %}
+
+{% include "components/header.html" %}
+<main class="hotel-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="hotel-search-wrap">
+          <form>
+            <input class="hotel-search" type="text" placeholder="Поиск">
+            <button class="hotel-search-btn">
+              <img src="../../images/svg/search-icon.svg" alt="">
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div>
+          <form class="hotel-form" action="">
+            <div class="select-wrap">
+              <label for="country">Страна</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Узбекистан</option>
+                  <option value="1">Кыргызстан</option>
+                  <option value="2">Азербайджан</option>
+                  <option value="3">Армения</option>
+                  <option value="4">Грузия</option>
+                  <option value="5">Таджикистан</option>
+                  <option value="6">Армения</option>
+                  <option value="7">Азербайджан</option>
+                  <option value="8">Кыргызстан</option>
+                  <option value="9">Узбекистан</option>
+                  <option value="10">Грузия</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Регион</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Выберите регион</option>
+                  <option value="1">Бухара</option>
+                  <option value="2"> Джизак</option>
+                  <option value="3">Кашкадаря</option>
+                  <option value="4">Ташкентская область</option>
+                  <option value="5">Ташкент</option>
+                  <option value="6">Фергана</option>
+                  <option value="6">Андижан</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Район</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Выберите район</option>
+                  <option value="1">Бухара</option>
+                  <option value="2"> Джизак</option>
+                  <option value="3">Кашкадаря</option>
+                  <option value="4">Ташкентская область</option>
+                  <option value="5">Ташкент</option>
+                  <option value="6">Фергана</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Сортировка</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">По популярности</option>
+                  <option value="1">Сначала дешевые</option>
+                  <option value="2">Сначала дорогие</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="select-wrap">
+              <div>
+                <div class="m-b-10 hotel-comfort"> Удобства</div>
+                <div class="hotel-comfort-content">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Парковка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Wi-Fi
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Круглосуточная стойка регистрации
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Завтрак
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Обед/ужин
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Семейные номера
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Глажка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Фитнес-центр
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Прачечная
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Бассейн
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Ресторан
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <div>
+                <div class="m-b-10 hotel-comfort"> Удобства</div>
+                <div class="hotel-comfort-content">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Парковка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Wi-Fi
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Круглосуточная стойка регистрации
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Завтрак
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Обед/ужин
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Семейные номера
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Глажка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Фитнес-центр
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Прачечная
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Бассейн
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Ресторан
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <div>
+                <div class="m-b-10 hotel-comfort"> Удобства</div>
+                <div class="hotel-comfort-content">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Парковка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Wi-Fi
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Круглосуточная стойка регистрации
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Завтрак
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Обед/ужин
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Семейные номера
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Глажка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Фитнес-центр
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Прачечная
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Бассейн
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Ресторан
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <div>
+                <div class="m-b-10 hotel-comfort"> Удобства</div>
+                <div class="hotel-comfort-content">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Парковка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Wi-Fi
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Круглосуточная стойка регистрации
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Завтрак
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Обед/ужин
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Семейные номера
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Глажка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Фитнес-центр
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Прачечная
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Бассейн
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Ресторан
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <div class="m-b-35"><a class="hotel-link" href="#!">Гиды</a></div>
+          <div class="hotel-title m-b-25"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ">
+            <div>
+              <a class="card-gid" href="/gid-single.html">
+                <div class="card-gid-img">
+                  <img src="http://picsum.photos/500" alt="">
+                  <span class="hover-shadow"></span>
+                  <span class="card-gid-photos"><img src="../../images/svg/photo-camera.svg" alt=""><span>5</span></span>
+                </div>
+                <div class="card-gid-content">
+                  <div class="card-gid-name">Шерзод Умаров</div>
+                  <div class="card-gid-address">Самаркандская область, Самарканд</div>
+                  <div class="card-gid-lang">Языки</div>
+                  <div class="card-gid-flags">
+                    <img src="../../images/png/united-states.png" alt="">
+                    <img src="../../images/png/united-states.png" alt="">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <a class="card-gid" href="#!">
+                <div class="card-gid-img">
+                  <img src="http://picsum.photos/502" alt="">
+                  <span class="hover-shadow"></span>
+                  <span class="card-gid-photos"><img src="../../images/svg/photo-camera.svg" alt=""><span>5</span></span>
+                </div>
+                <div class="card-gid-content">
+                  <div class="card-gid-name">Шерзод Умаров</div>
+                  <div class="card-gid-address">Самаркандская область, Самарканд</div>
+                  <div class="card-gid-lang">Языки</div>
+                  <div class="card-gid-flags">
+                    <img src="../../images/png/united-states.png" alt="">
+                    <img src="../../images/png/united-states.png" alt="">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <a class="card-gid" href="#!">
+                <div class="card-gid-img">
+                  <img src="http://picsum.photos/503" alt="">
+                  <span class="hover-shadow"></span>
+                  <span class="card-gid-photos"><img src="../../images/svg/photo-camera.svg" alt=""><span>5</span></span>
+                </div>
+                <div class="card-gid-content">
+                  <div class="card-gid-name">Шерзод Умаров</div>
+                  <div class="card-gid-address">Самаркандская область, Самарканд</div>
+                  <div class="card-gid-lang">Языки</div>
+                  <div class="card-gid-flags">
+                    <img src="../../images/png/united-states.png" alt="">
+                    <img src="../../images/png/united-states.png" alt="">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <a class="card-gid" href="#!">
+                <div class="card-gid-img">
+                  <img src="http://picsum.photos/504" alt="">
+                  <span class="hover-shadow"></span>
+                  <span class="card-gid-photos"><img src="../../images/svg/photo-camera.svg" alt=""><span>5</span></span>
+                </div>
+                <div class="card-gid-content">
+                  <div class="card-gid-name">Шерзод Умаров</div>
+                  <div class="card-gid-address">Самаркандская область, Самарканд</div>
+                  <div class="card-gid-lang">Языки</div>
+                  <div class="card-gid-flags">
+                    <img src="../../images/png/united-states.png" alt="">
+                    <img src="../../images/png/united-states.png" alt="">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <a class="card-gid" href="#!">
+                <div class="card-gid-img">
+                  <img src="http://picsum.photos/505" alt="">
+                  <span class="hover-shadow"></span>
+                  <span class="card-gid-photos"><img src="../../images/svg/photo-camera.svg" alt=""><span>5</span></span>
+                </div>
+                <div class="card-gid-content">
+                  <div class="card-gid-name">Шерзод Умаров</div>
+                  <div class="card-gid-address">Самаркандская область, Самарканд</div>
+                  <div class="card-gid-lang">Языки</div>
+                  <div class="card-gid-flags">
+                    <img src="../../images/png/united-states.png" alt="">
+                    <img src="../../images/png/united-states.png" alt="">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <a class="card-gid" href="#!">
+                <div class="card-gid-img">
+                  <img src="http://picsum.photos/506" alt="">
+                  <span class="hover-shadow"></span>
+                  <span class="card-gid-photos"><img src="../../images/svg/photo-camera.svg" alt=""><span>5</span></span>
+                </div>
+                <div class="card-gid-content">
+                  <div class="card-gid-name">Шерзод Умаров</div>
+                  <div class="card-gid-address">Самаркандская область, Самарканд</div>
+                  <div class="card-gid-lang">Языки</div>
+                  <div class="card-gid-flags">
+                    <img src="../../images/png/united-states.png" alt="">
+                    <img src="../../images/png/united-states.png" alt="">
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+{% include "components/footer.html" %}
+{% endblock %}

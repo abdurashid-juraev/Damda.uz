@@ -1,0 +1,93 @@
+.footer {
+  background-color: azure;
+  padding: 20px 0 15px 0;
+}
+
+.footer-social-wrap {
+  display: flex;
+  align-items: center;
+  li {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 992px) {
+    justify-content: center;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+    transition: all 0.4s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+h6 {
+  @media (max-width: 992px) {
+    margin-top: 5px;
+    text-align: center;
+  }
+}
+.footer-sm-collapse {
+  @media (max-width: 992px) {
+    display: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+.d-block {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .footer-sm-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 15px;
+    }
+  }
+}
+.footer-sm-title {
+  @media (min-width: 992px) {
+    img {
+      display: none;
+    }
+  }
+}
+.footer-end {
+  text-align: center;
+}
+.footer-tel-icon a {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    right: auto;
+    top: 5px;
+    height: 15px;
+    width: 15px;
+    background-image: url(../../images/svg/call.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+.footer-mail-icon a {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 6px;
+    height: 15px;
+    width: 15px;
+    background-image: url(../../images/svg/mail.svg);
+    background-repeat: no-repeat;
+  }
+}

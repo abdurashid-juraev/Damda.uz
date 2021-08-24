@@ -1,0 +1,659 @@
+{% set title = "tur" %}
+{% extends "main.tpl" %}
+
+{% block content %}
+
+{% include "components/header.html" %}
+
+<main class="ranch-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="hotel-search-wrap">
+          <form>
+            <input class="hotel-search" type="text" placeholder="Поиск">
+            <button class="hotel-search-btn">
+              <img src="../../images/svg/search-icon.svg" alt="">
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div>
+          <form class="hotel-form" action="">
+
+            <div class="select-wrap">
+              <label for="country">Регион</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Выберите регион</option>
+                  <option value="1">Бухара</option>
+                  <option value="2"> Джизак</option>
+                  <option value="3">Кашкадаря</option>
+                  <option value="4">Ташкентская область</option>
+                  <option value="5">Ташкент</option>
+                  <option value="6">Фергана</option>
+                  <option value="6">Андижан</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="country">Район</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">Выберите район</option>
+                  <option value="1">Бухара</option>
+                  <option value="2"> Джизак</option>
+                  <option value="3">Кашкадаря</option>
+                  <option value="4">Ташкентская область</option>
+                  <option value="5">Ташкент</option>
+                  <option value="6">Фергана</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap">
+              <label for="party">Заезд</label>
+              <input class="hotel-date-select" id="party" value="Выезд: " type="datetime-local" name="partydate">
+            </div>
+            <div class="select-wrap">
+              <label for="party">Выезд</label>
+              <input class="hotel-date-select" id="party" value="Выезд: " type="datetime-local" name="partydate">
+            </div>
+
+            <div class="select-wrap">
+              <label for="country">Сортировка</label>
+              <div class="custom-select">
+                <select>
+                  <option value="0">По популярности</option>
+                  <option value="1">Сначала дешевые</option>
+                  <option value="2">Сначала дорогие</option>
+                </select>
+              </div>
+            </div>
+            <div class="select-wrap m-b-40">
+              <p>
+                <label for="amount">Диапозон цен</label>
+                <input class="hotel-price-range" type="text" id="amount" readonly>
+              </p>
+              <div class="range-sl" id="slider-range"></div>
+            </div>
+            <div class="select-wrap">
+              <div>
+                <div class="m-b-10 hotel-comfort"> Удобства</div>
+                <div class="hotel-comfort-content">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Парковка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Wi-Fi
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Круглосуточная стойка регистрации
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Завтрак
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Обед/ужин
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Семейные номера
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Глажка
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Фитнес-центр
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Прачечная
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Бассейн
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Ресторан
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div>
+          <div class="m-b-35"><a class="hotel-link" href="#!">Туры</a></div>
+          <div class="hotel-title m-b-25">Экскурсии и туры по городам Узбекистан</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div>
+              <a href="/ranch-singel.html" class="hotel-card ranch-mod">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="ranch-top-card">TOP</span>
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="ranch-card-content">
+                  <div class="ranch-card-content-inner">
+                    <div class="m-b-15 ranch-mod">Чарвак ор.: кафе "Болажон", ID 270</div>
+                    <div class="hotel-address ranch-mod">Узбекистан, Ташкент, Яккасарайский район</div>
+                  </div>
+
+                  <div class="ranch-card-price">Цена: от <b>1 700 000 </b> сўм в сутки</div>
+                  <div class="ranch-card-modal-btn">
+                    <button class="btn-modal" data-toggle="modal" data-target="#basicModal">Календарь брони </button>
+                    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Чарвак ор.: кафе "Болажон",ID 270
+                            </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="wrapper">
+
+                              <div class="container-calendar">
+                                <h3 id="monthAndYear"></h3>
+
+                                <div class="button-container-calendar">
+                                  <button id="previous" onclick="previous()">&#8249;</button>
+                                  <button id="next" onclick="next()">&#8250;</button>
+                                </div>
+                                <table class="table-calendar" id="calendar" data-lang="en">
+                                  <thead id="thead-month"></thead>
+                                  <tbody id="calendar-body"></tbody>
+                                </table>
+                                <div class="footer-container-calendar">
+                                  <label for="month">Jump To: </label>
+                                  <select id="month" onchange="jump()">
+                                    <option value=0>Jan</option>
+                                    <option value=1>Feb</option>
+                                    <option value=2>Mar</option>
+                                    <option value=3>Apr</option>
+                                    <option value=4>May</option>
+                                    <option value=5>Jun</option>
+                                    <option value=6>Jul</option>
+                                    <option value=7>Aug</option>
+                                    <option value=8>Sep</option>
+                                    <option value=9>Oct</option>
+                                    <option value=10>Nov</option>
+                                    <option value=11>Dec</option>
+                                  </select>
+                                  <select id="year" onchange="jump()"></select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card  ranch-mod">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="ranch-top-card">TOP</span>
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="ranch-card-content">
+                  <div class="ranch-card-content-inner">
+                    <div class="m-b-15 ranch-mod">Чарвак ор.: кафе "Болажон", ID 270</div>
+                    <div class="hotel-address ranch-mod">Узбекистан, Ташкент, Яккасарайский район</div>
+                  </div>
+
+                  <div class="ranch-card-price">Цена: от <b>1 700 000 </b> сўм в сутки</div>
+                  <div class="ranch-card-modal-btn"><button>Календарь брони </button></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="ranch-card-content">
+                  <div class="ranch-card-content-inner">
+                    <div class="m-b-15 ranch-mod">Чарвак ор.: кафе "Болажон", ID 270</div>
+                    <div class="hotel-address ranch-mod">Узбекистан, Ташкент, Яккасарайский район</div>
+                  </div>
+
+                  <div class="ranch-card-price">Цена: от <b>1 700 000 </b> сўм в сутки</div>
+                  <div class="ranch-card-modal-btn"><button>Календарь брони </button></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="ranch-card-content">
+                  <div class="ranch-card-content-inner">
+                    <div class="m-b-15 ranch-mod">Чарвак ор.: кафе "Болажон", ID 270</div>
+                    <div class="hotel-address ranch-mod">Узбекистан, Ташкент, Яккасарайский район</div>
+                  </div>
+
+                  <div class="ranch-card-price">Цена: от <b>1 700 000 </b> сўм в сутки</div>
+                  <div class="ranch-card-modal-btn"><button>Календарь брони </button></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="ranch-card-content">
+                  <div class="ranch-card-content-inner">
+                    <div class="m-b-15 ranch-mod">Чарвак ор.: кафе "Болажон", ID 270</div>
+                    <div class="hotel-address ranch-mod">Узбекистан, Ташкент, Яккасарайский район</div>
+                  </div>
+
+                  <div class="ranch-card-price">Цена: от <b>1 700 000 </b> сўм в сутки</div>
+                  <div class="ranch-card-modal-btn"><button>Календарь брони </button></div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div>
+              <a href="#!" class="hotel-card">
+                <div class="hotel-img">
+                  <img src="../../images/png/hotel1.jpg" alt="">
+                  <span class="hotel-card-shadow"></span>
+                  <span class="hotel-img-position">
+                    <span>
+                      <?xml version="1.0" encoding="iso-8859-1"?>
+                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+			c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+			c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+			s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+			C512,93.417,453.532,30,376,30z" />
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                      </svg>
+
+                    </span>
+                    <span>
+                      <img src="../../images/svg/photo-camera.svg" alt="">
+                      <span>15</span>
+                    </span>
+                  </span>
+                </div>
+                <div class="ranch-card-content">
+                  <div class="ranch-card-content-inner">
+                    <div class="m-b-15 ranch-mod">Чарвак ор.: кафе "Болажон", ID 270</div>
+                    <div class="hotel-address ranch-mod">Узбекистан, Ташкент, Яккасарайский район</div>
+                  </div>
+
+                  <div class="ranch-card-price">Цена: от <b>1 700 000 </b> сўм в сутки</div>
+                  <div class="ranch-card-modal-btn"><button>Календарь брони </button>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+{% include "components/footer.html" %}
+{% endblock %}

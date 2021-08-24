@@ -1,0 +1,55 @@
+.ranch-page {
+  padding-top: 30px;
+}
+
+.ranch-card-content {
+  padding: 10px 0 0 0;
+}
+.ranch-card-content-inner {
+  padding: 0 15px 10px 15px;
+}
+.ranch-card-price {
+  text-align: center;
+  border-top: 3px solid #d3d3d3;
+  border-bottom: 3px solid #d3d3d3;
+  padding: 10px 0;
+}
+.ranch-top-card {
+  position: absolute;
+  left: -50px;
+  top: 18px;
+  transform: rotate(-40deg);
+  background: yellow;
+  height: 30px;
+  width: 160px;
+  font-weight: bold;
+  line-height: 1.8;
+  text-align: center;
+}
+.ranch-mod {
+  overflow: hidden;
+}
+.ranch-card-modal-btn {
+  padding-top: 10px;
+
+  display: grid;
+  place-items: center;
+  button {
+    border: 0;
+    background: none;
+    position: relative;
+    &:focus {
+      outline: none;
+    }
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: -20px;
+      top: 5px;
+      background-image: url(../../../images/svg/arrow-down.svg);
+    }
+  }
+}
+@import "../ranch-modal-calendar";

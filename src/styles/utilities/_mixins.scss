@@ -1,0 +1,14 @@
+@mixin d-f-x {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin singel-body {
+  background-color: #fff;
+  padding: 30px 10px;
+}

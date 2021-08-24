@@ -1,0 +1,43 @@
+.hotel-info-blocks {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #ededed;
+  margin-top: 15px;
+  span {
+    &:first-child {
+      img {
+        width: 20px;
+        height: 20px;
+      }
+      .meeting {
+        width: 50px;
+        height: 25px;
+      }
+      .booking {
+        width: 30px;
+        height: 25px;
+      }
+    }
+    &:last-child {
+      font-size: 16px;
+      margin-left: 10px;
+      line-height: 1.2;
+    }
+  }
+}
+.hotel-info-text {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 25px;
+  font-weight: 600;
+
+  img {
+    margin: 0 auto;
+    width: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+}
+

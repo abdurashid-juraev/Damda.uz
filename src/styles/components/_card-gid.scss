@@ -1,0 +1,84 @@
+.card-gid {
+  display: block;
+  background: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 7px 20px 7px rgba(204, 204, 204, 0.3);
+  &:hover {
+    color: inherit;
+  }
+}
+.card-gid-img {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  transition: 0.3s all ease;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &:hover {
+    .hover-shadow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(3, 92, 131, 0.65);
+    }
+  }
+}
+.card-gid-photos {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  padding: 3px 7px;
+  background: #fff;
+  border-radius: 10px;
+  img {
+    width: 20px;
+    margin-right: 8px;
+  }
+}
+.card-gid-content {
+  padding: 15px;
+}
+.card-gid-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.card-gid-address {
+  font-size: 14px;
+  margin-left: 20px;
+  position: relative;
+  margin-bottom: 15px;
+  &::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: -20px;
+    top: 3px;
+    background-image: url(../../images/svg/location.svg);
+    background-repeat: no-repeat;
+  }
+}
+.card-gid-flags {
+  display: flex;
+  img {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 10px;
+  }
+}

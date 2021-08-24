@@ -1,0 +1,57 @@
+.hotel-booking-info {
+  display: grid;
+  place-items: center;
+  img {
+    margin: auto;
+    width: 60px;
+    height: 60px;
+  }
+}
+.hotel-yesNo-checkbox {
+  display: flex;
+  font-size: 18px;
+  margin-bottom: 30px;
+  p {
+    margin-left: 20px;
+    color: #fff;
+  }
+}
+.hotel-booking-wrap,
+.hotel-booking-chek-in,
+.hotel-booking-chek-out,
+.hotel-booking-chek-out-inner {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 35px;
+  font-size: 20px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  input {
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.hotel-booking-chek-out {
+  align-items: center;
+}
+.booking-link{
+  @media (max-width:768px) {
+    margin-top: 30px;
+  }
+}
+.hotel-booking-link {
+  padding: 15px 20px;
+  background: #ededed;
+  border-radius: 8px;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #d3d3d3;
+    color: dodgerblue;
+  }
+}

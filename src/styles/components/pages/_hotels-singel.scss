@@ -1,0 +1,84 @@
+.hotels-singel-body {
+  @include singel-body;
+  .hotels-singel-url {
+    display: flex;
+    margin-bottom: 35px;
+    li {
+      margin-right: 25px;
+
+      a {
+        position: relative;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+        &::after {
+          content: "-";
+          position: absolute;
+          left: 114%;
+        }
+      }
+    }
+  }
+  .hotel-address-content {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    @media (max-width:768px) {
+      margin-left: 0;
+    }
+  }
+  .hotel-name {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+
+  .hotel-name-address,
+  .hotel-name-address-inner,
+  .hotel-gost {
+    display: flex;
+    align-items: center;
+    img {
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+  }
+  .hotel-name-address-inner {
+    margin-right: 5px;
+  }
+  .hotel-address-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .address-link {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      padding: 10px 30px;
+      border: 1px solid #d3d3d3;
+      transition: all 0.3s;
+      a {
+        color: inherit;
+      }
+      &:hover {
+        color: dodgerblue;
+        background: #ededed;
+      }
+      a {
+        margin-left: 15px;
+      }
+    }
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .hotel-gost {
+    margin-left: 40px;
+  }
+  @import "../hotel-slider";
+  @import "../hotel-info-content";
+  @import "../yesNo-checkbox";
+  @import "../hotel-booking";
+  @import "../hotel-booking-card";
+}

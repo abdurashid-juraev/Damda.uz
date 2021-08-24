@@ -1,0 +1,162 @@
+.hotel-booking-card {
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #d3d3d3;
+  .hotel-card-img-wrap {
+    width: 350px;
+    min-height: 180px;
+    object-fit: cover;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    // .hotel-img-position{
+      // &:last-child{
+        // background: #000;
+      // }
+      
+    // }
+    .slide-position {
+      width: 40px;
+      height: 30px;
+      
+    }
+  }
+  .hotel-booking-card-content {
+    width: 100%;
+  }
+  .hotel-card-titles {
+    display: flex;
+    margin-bottom: 20px;
+    li {
+      margin-left: 75px;
+      &:first-child {
+        color: dodgerblue;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: -44px;
+          top: 3px;
+          background-image: url(../../images/svg/peoples.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 25px;
+          height: 25px;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &:nth-child(2) {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: -41px;
+          top: 1px;
+          width: 23px;
+          height: 23px;
+          background-image: url(../../images/svg/bed.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+      &:last-child {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: -44px;
+          top: 1px;
+          width: 25px;
+          height: 25px;
+          background-image: url(../../images/svg/restaurant.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  .hotel-booking-price {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .hotel-card-select {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    .select-wrap {
+      display: flex;
+      flex-direction: column;
+      .custom-select {
+        width: 110px;
+      }
+      label {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+  .hotel-price {
+    text-align: center;
+
+    li {
+      &:first-child {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      &:last-child {
+        background: #ededed;
+        padding: 8px 30px;
+        margin-top: 7px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: #d3d3d3;
+          color: dodgerblue;
+        }
+      }
+    }
+  }
+}
+.hotel-booking-slide-card {
+  display: flex;
+  .booking-slide-content {
+    margin-left: 30px;
+    width: 100%;
+  }
+  .hotel-room-info {
+    display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    li {
+      margin-right: 30px;
+    }
+  }
+  .booking-slide-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+.hide {
+  display: none;
+}
+.hotel-booking-hide {
+  position: relative;
+  margin-left: 40px;
+  margin-top: 20px;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 15%;
+    top: 10px;
+    border: 6px solid transparent;
+    border-color: DodgerBlue transparent transparent transparent;
+  }
+}
+

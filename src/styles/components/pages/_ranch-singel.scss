@@ -1,0 +1,6 @@
+.ranch-singel-body {
+  padding-top: 30px;
+  @include singel-body;
+}
+@import "../ranch-slider";
+@import "../ranch-booking";

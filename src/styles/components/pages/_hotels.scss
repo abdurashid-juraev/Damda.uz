@@ -1,0 +1,16 @@
+.hotel-page {
+  padding-top: 30px;
+}
+@import "../hotel-search";
+.hotel-link {
+  font-size: 20px;
+  text-decoration: underline;
+}
+.hotel-title {
+  font-size: 35px;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+}
+@import "../hotel-card";
+@import "../hotel-select";
